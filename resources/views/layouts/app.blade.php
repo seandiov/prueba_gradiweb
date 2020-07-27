@@ -31,7 +31,7 @@
                     <li class="current"><a href="">Crear vehiculo</a></li>
                     <li><a href="javascript:void(0)">Logica</a>
                         <ul>
-                            <li><a href="">Demo</a></li>
+                            <li><a href="#!/demo-cliente">Demo</a></li>
                         </ul>
                     </li>
                 </ul>

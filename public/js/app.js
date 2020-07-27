@@ -10,6 +10,9 @@ app.config(function ($routeProvider) {
     }).when("/crear-propietario", {
         templateUrl: '/vehiculo/nuevo',
         controller: 'VehiculoController'
+    }).when("/demo-cliente", {
+        templateUrl: '/demo.html',
+        controller: 'DemoController'
     }).otherwise({
         redirectTo: '/'
     });
@@ -18,7 +21,6 @@ app.config(function ($routeProvider) {
 
 
 /* Controlador para listar vehiculos */
-
 app.controller('InicioController', function ($scope, $http, $location) {
     $scope.vehiculoslist = [];
     $http({
@@ -93,4 +95,24 @@ app.controller('VehiculoController', function ($scope, $http, $location) {
         }
     };
 
+});
+
+/* Controlador para demo */
+app.controller('DemoController', function ($scope, $http, ) {
+    $scope.origen = null;
+    $scope.destino = {};
+    $scope.procesar = function () {
+        $scope.origen = JSON.parse(jQuery("#origen").val());
+        jQuery.each($scope.origen, function (i, index) {
+            if (typeof $scope.destino[index[0]] === 'undefined') {
+                $scope.destino[index[0]] = {};
+            }
+            if (typeof $scope.destino[index[0]][index[1]] === 'undefined') {
+                $scope.destino[index[0]][index[1]] = 0;
+            }
+            
+            $scope.destino[index[0]][index[1]] = $scope.destino[index[0]][index[1]]+index[3];
+        });
+        jQuery("#destino").val(JSON.stringify($scope.destino));
+    };
 });
