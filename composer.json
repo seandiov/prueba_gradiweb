@@ -14,8 +14,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "reliese/laravel": "^0.0.16",
-		"adamkearsley/convert-migrations": "dev-master"
+        "reliese/laravel": "^0.0.16"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
