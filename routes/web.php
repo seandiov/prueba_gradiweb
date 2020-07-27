@@ -14,5 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
+});
+
+Route::group(['prefix'=>'tipoIdentificacion'], function(){
+   Route::get('listar','TipoIdentificacionController@listar')->name('tipoIdentificacion.listar');
+});
+
+Route::group(['prefix'=>'marca'], function(){
+   Route::get('listar','MarcaController@listar')->name('marca.listar');
+});
+
+Route::group(['prefix'=>'modelo'], function(){
+   Route::get('filtrarPorMarca/{id}','ModeloMarcaController@filtrarPorMarca')->name('modeloMarca.filtrarPorMarca');
+});
+
+Route::group(['prefix'=>'vehiculo'], function(){
+   Route::get('inicio','VehiculoController@inicio')->name('vehiculo.inicio');
+   Route::get('contarVehiculos','VehiculoController@contarVehiculos')->name('vehiculo.contarVehiculos');
+   Route::get('nuevo','VehiculoController@nuevo')->name('vehiculo.nuevo');
+   Route::post('crear','VehiculoController@crear')->name('vehiculo.crear');
 });

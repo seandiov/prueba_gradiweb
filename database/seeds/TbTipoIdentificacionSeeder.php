@@ -19,8 +19,6 @@ class TbTipoIdentificacionSeeder extends Seeder {
             'updated_at' => NULL
         ]);
 
-
-
         DB::table('tb_tipo_identificacion')->insert([
             'id' => 2,
             'nombre' => 'Tarjeta de identidad',
@@ -29,8 +27,6 @@ class TbTipoIdentificacionSeeder extends Seeder {
             'created_at' => '2020-07-25 19:11:53',
             'updated_at' => NULL
         ]);
-
-
 
         DB::table('tb_tipo_identificacion')->insert([
             'id' => 3,
